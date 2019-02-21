@@ -11,7 +11,7 @@ defmodule PairmotronBot.SlackBot do
   end
 
   def handle_connect(slack, state) do
-    IO.puts("Connected as #{slack.me.name}")
+    IO.puts("Successfully connected to Slack as #{slack.me.name}")
     {:ok, state}
   end
 
