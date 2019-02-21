@@ -43,7 +43,8 @@ defmodule PairmotronBot.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:slack, "~> 0.15.0"}
+      {:slack, "~> 0.15.0"},
+      {:accomplice, "~> 0.2.0"},
     ]
   end
 
