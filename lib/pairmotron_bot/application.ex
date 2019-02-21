@@ -16,6 +16,8 @@ defmodule PairmotronBot.Application do
       # {PairmotronBot.Worker, arg},
     ]
 
+    slack_api_key = System.get_env("SLACK_PAIRMOTRON_BOT_USER_ACCESS_TOKEN")
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: PairmotronBot.Supervisor]

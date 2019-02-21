@@ -68,8 +68,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :pairmotron_bot, PairmotronBot.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("PG_USER") || "postgres",
+  password: System.get_env("PG_PASSWORD") || "postgres",
   database: "pairmotron_bot_dev",
   hostname: "localhost",
   pool_size: 10
