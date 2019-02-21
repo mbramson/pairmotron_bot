@@ -1,6 +1,15 @@
 defmodule PairmotronBot.SlackBot do
   use Slack
 
+  def child_spec(_opts) do
+    slack_api_key = System.get_env("SLACK_PAIRMOTRON_BOT_USER_ACCESS_TOKEN")
+
+    %{
+      id: PairmotronBot.SlackBot,
+      start: {Slack.Bot, :start_link, [PairmotronBot.SlackBot, [], slack_api_key]}
+    }
+  end
+
   def handle_connect(slack, state) do
     IO.puts "Connected as #{slack.me.name}"
     {:ok, state}

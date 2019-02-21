@@ -6,17 +6,18 @@ defmodule PairmotronBot.Application do
   use Application
 
   def start(_type, _args) do
+    slack_api_key = System.get_env("SLACK_PAIRMOTRON_BOT_USER_ACCESS_TOKEN")
+
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
       PairmotronBot.Repo,
       # Start the endpoint when the application starts
-      PairmotronBotWeb.Endpoint
+      PairmotronBotWeb.Endpoint,
       # Starts a worker by calling: PairmotronBot.Worker.start_link(arg)
       # {PairmotronBot.Worker, arg},
+      PairmotronBot.SlackBot
     ]
-
-    slack_api_key = System.get_env("SLACK_PAIRMOTRON_BOT_USER_ACCESS_TOKEN")
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
