@@ -25,7 +25,8 @@ This is also a phoenix server. Start with:
 mix phx.server
 ```
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
 If everything is wired up properly you should see `"Successfully connected to
 Slack as <Your bot name>"` in the console.
+
+You can also visit [`localhost:4000`](http://localhost:4000) from your browser,
+but this doesn't do anything special at the moment.
